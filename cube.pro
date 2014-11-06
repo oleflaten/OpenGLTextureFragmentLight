@@ -3,6 +3,8 @@ QT       += core gui widgets
 TARGET = cube
 TEMPLATE = app
 
+QMAKE_CXXFLAGS += -std=c++11
+
 SOURCES += main.cpp
 
 SOURCES += \

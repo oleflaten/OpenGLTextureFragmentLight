@@ -35,7 +35,7 @@ private:
     //QVector3D ambientColor= QVector3D(0.3f, 1.0f, 1.0f);
     //QVector3D ambientColor= QVector3D(0.9f, 0.9f, 1.0f);
     //QVector3D ambientColor= QVector3D(1.0f, 1.0f, 1.0f);
-    QVector3D ambientColor= QVector3D(0.1f, 0.1f, 0.1f);
+    QVector3D ambientColor= QVector3D(0.0f, 0.0f, 0.0f);
     QVector3D diffuseColor = QVector3D(0.7f, 0.7f, 0.7f);
     QVector3D specularColor = QVector3D(1.0f, 1.0f, 1.0f);
 
