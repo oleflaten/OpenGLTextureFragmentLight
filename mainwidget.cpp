@@ -5,7 +5,7 @@
 #include <math.h>
 
 MainWidget::MainWidget(QWidget *parent) :
-    QOpenGLWidget(parent),
+    QGLWidget(parent),
     geometries(0),
     texture(0),
     angularSpeed(0)

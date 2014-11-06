@@ -3,7 +3,7 @@
 
 #include "geometryengine.h"
 
-#include <QOpenGLWidget>
+#include <QGLWidget>
 #include <QOpenGLFunctions>
 #include <QMatrix4x4>
 #include <QQuaternion>
@@ -14,7 +14,7 @@
 
 class GeometryEngine;
 
-class MainWidget : public QOpenGLWidget, protected QOpenGLFunctions
+class MainWidget : public QGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
 
