@@ -167,9 +167,10 @@ void MainWidget::paintGL()
     program.setUniformValue("mvMatrix", matrix);
 
     // Set nMatrix
-
-    program.setUniformValue("nMatrix", matrix);
-
+    //matrix for normals - inverted mv-matrix
+    QMatrix3x3 nMatrix = matrix.normalMatrix();
+    //hooking matrix to shader
+    program.setUniformValue("nMatrix", nMatrix);
 
     // Use texture unit 0 which contains cube.png
     program.setUniformValue("texture", 0);
