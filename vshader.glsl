@@ -22,7 +22,6 @@ uniform lowp vec3 ambientColor;
 uniform lowp vec3 diffuseColor;
 uniform lowp vec3 specularColor;
 
-//! [0]
 void main()
 {
     // Get vertex position in eye coordinates and send to the fragment shader
@@ -32,10 +31,8 @@ void main()
     vNormalEye = normalize(nMatrix * a_normal);
     // Transform the geometry
     gl_Position = pMatrix * mvMatrix * a_position;
-    //col = colAttr;
 
     // Pass texture coordinate to fragment shader
     // Value will be automatically interpolated to fragments inside polygon faces
     v_texcoord = a_texcoord;
 }
-//! [0]

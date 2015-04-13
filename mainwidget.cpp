@@ -22,7 +22,6 @@ MainWidget::~MainWidget()
     doneCurrent();
 }
 
-//! [0]
 void MainWidget::mousePressEvent(QMouseEvent *e)
 {
     // Save mouse press position
@@ -47,9 +46,7 @@ void MainWidget::mouseReleaseEvent(QMouseEvent *e)
     // Increase angular speed
     angularSpeed += acc;
 }
-//! [0]
 
-//! [1]
 void MainWidget::timerEvent(QTimerEvent *)
 {
     // Decrease angular speed (friction)
@@ -66,7 +63,6 @@ void MainWidget::timerEvent(QTimerEvent *)
         update();
     }
 }
-//! [1]
 
 void MainWidget::initializeGL()
 {
@@ -77,13 +73,11 @@ void MainWidget::initializeGL()
     initShaders();
     initTextures();
 
-//! [2]
     // Enable depth buffer
     glEnable(GL_DEPTH_TEST);
 
     // Enable back face culling
     glEnable(GL_CULL_FACE);
-//! [2]
 
     geometries = new GeometryEngine;
 
@@ -91,7 +85,6 @@ void MainWidget::initializeGL()
     timer.start(12, this);
 }
 
-//! [3]
 void MainWidget::initShaders()
 {
     // Compile vertex shader
@@ -110,9 +103,7 @@ void MainWidget::initShaders()
     if (!program.bind())
         close();
 }
-//! [3]
 
-//! [4]
 void MainWidget::initTextures()
 {
     // Load cube.png image
@@ -128,9 +119,7 @@ void MainWidget::initTextures()
     // f.ex. texture coordinate (1.1, 1.2) is same as (0.1, 0.2)
     texture->setWrapMode(QOpenGLTexture::Repeat);
 }
-//! [4]
 
-//! [5]
 void MainWidget::resizeGL(int w, int h)
 {
     // Calculate aspect ratio
@@ -145,7 +134,6 @@ void MainWidget::resizeGL(int w, int h)
     // Set perspective projection
     projection.perspective(fov, aspect, zNear, zFar);
 }
-//! [5]
 
 void MainWidget::paintGL()
 {
@@ -154,7 +142,6 @@ void MainWidget::paintGL()
 
     texture->bind();
 
-//! [6]
     // Calculate model view transformation
     QMatrix4x4 matrix;
     matrix.translate(0.0, 0.0, -5.0);

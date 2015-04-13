@@ -10,7 +10,6 @@ struct VertexData
     QVector3D normal;
 };
 
-//! [0]
 GeometryEngine::GeometryEngine()
     : indexBuf(QOpenGLBuffer::IndexBuffer)
 {
@@ -29,7 +28,6 @@ GeometryEngine::~GeometryEngine()
     arrayBuf.destroy();
     indexBuf.destroy();
 }
-//! [0]
 
 void GeometryEngine::initCubeGeometry()
 {
@@ -100,7 +98,6 @@ void GeometryEngine::initCubeGeometry()
 
 }
 
-//! [2]
 void GeometryEngine::drawCubeGeometry(QOpenGLShaderProgram *program)
 {
     // Tell OpenGL which VBOs to use
@@ -151,4 +148,3 @@ void GeometryEngine::drawCubeGeometry(QOpenGLShaderProgram *program)
     // Draw cube geometry using indices from VBO 1
     glDrawElements(GL_TRIANGLE_STRIP, 34, GL_UNSIGNED_SHORT, 0);
 }
-//! [2]

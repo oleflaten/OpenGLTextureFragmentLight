@@ -17,7 +17,6 @@ uniform vec3 specularColor;
 
 const float shininess = 32.0;
 
-//! [0]
 void main()
 {
     // Calculate the vector (l) to the light source
@@ -41,7 +40,8 @@ void main()
     vec4 texelColor = texture2D(texture, v_texcoord);
     // modulate texel color with lightweigthing and write as final color
     gl_FragColor = vec4(lightWeighting.rgb * texelColor.rgb, texelColor.a);
-    // Set fragment color from texture
+
+    // Set fragment color from texture - no lights if you uncomment this:
     //gl_FragColor = texelColor;
 }
 
